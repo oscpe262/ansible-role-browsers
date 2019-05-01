@@ -10,7 +10,8 @@
 - name: "Enable chrome repo"
   command: dnf config-manager --set-enabled google-chrome
   tags: browsers
-  warn: false
+  args:  
+    warn: false
 
 - name: "Install browsers"
   dnf:
