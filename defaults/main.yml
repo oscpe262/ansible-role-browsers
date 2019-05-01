@@ -1,0 +1,4 @@
+## roles/ansible-role-browsers/defaults/main.yml
+# vim:ft=yaml.ansible:
+---
+...

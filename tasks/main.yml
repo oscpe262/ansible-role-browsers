@@ -1,0 +1,23 @@
+## roles/ansible-role-browsers/tasks/main.yml
+# vim:ft=yaml.ansible:
+---
+- name: "Install Fedora workstation repos"
+  dnf:
+    name: fedora-workstation-repositories
+    state: present
+  tags: browsers
+
+- name: "Enable chrome repo"
+  command: dnf config-manager --set-enabled google-chrome
+  tags: browsers
+  warn: false
+
+- name: "Install browsers"
+  dnf:
+    name:
+      - '@Firefox Web Browser'
+      - google-chrome-stable
+    state: present
+  tags: browsers
+  ignore_errors: true
+...
